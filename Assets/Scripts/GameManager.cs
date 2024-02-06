@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("бс GameObject")]
+    [SerializeField]private GameObject buttonObject;
+    [SerializeField] private GameObject depositObject;
+    [SerializeField] private GameObject withDrawObject;
+
+
+
+
+    public void OnClickDepositBtn()
     {
+        buttonObject.SetActive(false);
+        depositObject.SetActive(true);
+    }
+
+    public void OnClickWithDrawBtn()
+    {
+        buttonObject.SetActive(false);
+        withDrawObject.SetActive(true);
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnClickBackBtn()
     {
-        
+        withDrawObject.SetActive(false);
+        depositObject.SetActive(false);
+        buttonObject.SetActive(true);
     }
 }

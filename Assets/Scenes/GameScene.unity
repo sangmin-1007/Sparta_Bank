@@ -4023,7 +4023,7 @@ GameObject:
   - component: {fileID: 1551357475}
   - component: {fileID: 1551357474}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4233,7 +4233,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 2
-  m_Text: 000000
+  m_Text: 100000
 --- !u!222 &1775213367
 CanvasRenderer:
   m_ObjectHideFlags: 0
