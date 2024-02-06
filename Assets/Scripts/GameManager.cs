@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject buttonObject;
     [SerializeField] private GameObject depositObject;
     [SerializeField] private GameObject withDrawObject;
+    [SerializeField] private GameObject errorMessage;
 
     [Header("Text")]
     [SerializeField] private Text myMoneyTxt;
@@ -62,6 +63,8 @@ public class GameManager : MonoBehaviour
                 myMoneyTxt.text = myMoney.ToString("N0");
                 bankMoneyTxt.text = $"Balance    {bankMoney.ToString("N0")}";
             }
+            else
+                errorMessage.SetActive(true);
         }
         else
         {
@@ -72,6 +75,8 @@ public class GameManager : MonoBehaviour
                 myMoneyTxt.text = myMoney.ToString("N0");
                 bankMoneyTxt.text = $"Balance    {bankMoney.ToString("N0")}";
             }
+            else
+                errorMessage.SetActive(true);
         }
     }
 
@@ -86,6 +91,8 @@ public class GameManager : MonoBehaviour
                 myMoneyTxt.text = myMoney.ToString("N0");
                 bankMoneyTxt.text = $"Balance    {bankMoney.ToString("N0")}";
             }
+            else
+                errorMessage.SetActive(true);
         }
         else
         {
@@ -96,6 +103,8 @@ public class GameManager : MonoBehaviour
                 myMoneyTxt.text = myMoney.ToString("N0");
                 bankMoneyTxt.text = $"Balance    {bankMoney.ToString("N0")}";
             }
+            else
+                errorMessage.SetActive(true);
         }
     }
 
@@ -109,6 +118,10 @@ public class GameManager : MonoBehaviour
                 bankMoney += 50000;
                 myMoneyTxt.text = myMoney.ToString("N0");
                 bankMoneyTxt.text = $"Balance    {bankMoney.ToString("N0")}";
+            }
+            else
+            {
+                errorMessage.SetActive(true);
             }
         }
         else
@@ -138,6 +151,8 @@ public class GameManager : MonoBehaviour
             myMoneyTxt.text = myMoney.ToString("N0");
             bankMoneyTxt.text = $"Balance    {bankMoney.ToString("N0")}";
         }
+        else
+            errorMessage.SetActive(true);
     }
     public void OnClickInputWithDraw()
     {
@@ -154,6 +169,13 @@ public class GameManager : MonoBehaviour
             myMoneyTxt.text = myMoney.ToString("N0");
             bankMoneyTxt.text = $"Balance    {bankMoney.ToString("N0")}";
         }
+        else
+            errorMessage.SetActive(true);
+    }
+
+    public void OnClickErrorMessageBtn()
+    {
+        errorMessage.SetActive(false);
     }
     #endregion
 
