@@ -6,10 +6,12 @@ using UnityEngine.UI;
 
 public class Login : MonoBehaviour
 {
-    [Header("InputField")]
+    [Header("■ InputField")]
     [SerializeField] private InputField id;
     [SerializeField] private InputField ps;
 
+    [Header("■ GameObject")]
+    [SerializeField] private GameObject errorMessage;
     public void OnClickLoginBtn()
     {
         if (id.text != "" && ps.text != "")
@@ -18,7 +20,12 @@ public class Login : MonoBehaviour
 
         }
         else
-            Debug.Log("아이디 비번 확인!");
+            errorMessage.SetActive(true);
+    }
+
+    public void OnClickErrorMessage()
+    {
+        errorMessage.SetActive(false);
     }
 
 }

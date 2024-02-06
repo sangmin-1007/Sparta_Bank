@@ -133,18 +133,21 @@ public class GameManager : MonoBehaviour
                 myMoneyTxt.text = myMoney.ToString("N0");
                 bankMoneyTxt.text = $"Balance    {bankMoney.ToString("N0")}";
             }
+            else
+            {
+                errorMessage.SetActive(true);
+            }
         }
     }
 
     public void OnClickInputDeposit()
     {
-        bool isPossible = int.TryParse(inputText[0].text, out int getMoney);
-        if (!isPossible)
-        {
-            Debug.Log("숫자만 입력하세요");
+        if (inputText[0].text == "")
             return;
-        }
-        else if (myMoney >= getMoney)
+
+        int getMoney = int.Parse(inputText[0].text);
+
+        if (myMoney >= getMoney)
         {
             myMoney -= getMoney;
             bankMoney += getMoney;
@@ -156,13 +159,12 @@ public class GameManager : MonoBehaviour
     }
     public void OnClickInputWithDraw()
     {
-        bool isPossible = int.TryParse(inputText[1].text, out int getMoney);
-        if (!isPossible)
-        {
-            Debug.Log("숫자만 입력하세요");
+        if (inputText[1].text == "")
             return;
-        }
-        else if (bankMoney >= getMoney)
+
+        int getMoney = int.Parse(inputText[1].text);
+
+        if (bankMoney >= getMoney)
         {
             myMoney += getMoney;
             bankMoney -= getMoney;
@@ -173,7 +175,7 @@ public class GameManager : MonoBehaviour
             errorMessage.SetActive(true);
     }
 
-    public void OnClickErrorMessageBtn()
+    public void OnClickErrorMessage()
     {
         errorMessage.SetActive(false);
     }
