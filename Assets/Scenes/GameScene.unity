@@ -4044,6 +4044,8 @@ MonoBehaviour:
   buttonObject: {fileID: 445160154}
   depositObject: {fileID: 209119401}
   withDrawObject: {fileID: 1974025947}
+  myMoneyTxt: {fileID: 1775213366}
+  bankMoneyTxt: {fileID: 640690030}
 --- !u!4 &1551357475
 Transform:
   m_ObjectHideFlags: 0
