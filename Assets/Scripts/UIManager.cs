@@ -7,7 +7,10 @@ public class UIManager : MonoBehaviour
     private static UIManager instance;
     public static UIManager Instance => instance;
 
+    [Header("�� GameObject")]
     [SerializeField]private GameObject buttonObject;
+    [SerializeField] private GameObject depositObject;
+    [SerializeField] private GameObject withDrawObject;
 
 
     private void Awake()
@@ -17,13 +20,25 @@ public class UIManager : MonoBehaviour
             instance = this;
         }
         else
-            Destroy(gameObject);
-    }
 
 
     public void OnClickDepositBtn()
     {
         buttonObject.SetActive(false);
+        depositObject.SetActive(true);
     }
 
+    public void OnClickWithDrawBtn()
+    {
+        buttonObject.SetActive(false);
+        withDrawObject.SetActive(true);
+        
+    }
+
+    public void OnClickBackBtn()
+    {
+        withDrawObject.SetActive(false);
+        depositObject.SetActive(false);
+        buttonObject.SetActive(true);
+    }
 }
